@@ -1,21 +1,56 @@
 # Zuples
 
-**TODO: Add description**
+Gen Z error tuples.
+
+## Usage
+
+```elixir
+defmodule MyModule do
+  import Zuples
+
+  defz ok do
+    :ok
+  end
+
+  defz error do
+    :error
+  end
+
+  defz ok_tuple do
+    {:ok, "foo"}
+  end
+
+  defz error_tuple do
+    {:error, "bar", "baz"}
+  end
+end
+```
+
+```bash
+iex(1)> MyModule.ok()
+:"👍"
+iex(2)> MyModule.error()
+:"💩"
+iex(3)> MyModule.ok_tuple()
+{:"👍", "foo"}
+iex(4)> MyModule.error_tuple()
+{:"💩", "bar", "baz"}
+```
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `zuples` to your list of dependencies in `mix.exs`:
+I won't rob Hex of a package name for this.
+
+If you really want to, you can add this to the dependencies via Github:
 
 ```elixir
 def deps do
   [
-    {:zuples, "~> 0.1.0"}
+    {:zuples, github: "rbino/zuples"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/zuples>.
+## Why?
 
+Yes.
